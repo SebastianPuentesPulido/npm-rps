@@ -1,0 +1,7 @@
+
+          ===Partida Hecha a las Thu Jan 12 2023 17:05:59 GMT-0500 (hora estándar de Colombia)===
+          sebas:Papel==//==Machine: Piedra
+      
+          ===Partida Hecha a las Thu Jan 12 2023 17:06:36 GMT-0500 (hora estándar de Colombia)===
+          etc:Tijeras==//==Machine: Piedra
+      

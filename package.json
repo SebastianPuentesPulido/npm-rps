@@ -1,0 +1,20 @@
+{
+  "name": "piedra-papel-y-tijera_js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon ./src/index.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^9.1.4",
+    "kleur": "^4.1.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
