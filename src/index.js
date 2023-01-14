@@ -1,56 +1,53 @@
-import inquirer from "inquirer";
-import kleur from "kleur";
-import { createFile } from './Partidas.cjs';
-
-let date = new Date();
-
-inquirer
-  .prompt([
-    {
-      type: "input",
-      name: "name",
-      message: "Escoge un nombre como jugador",
-    },
-    {
-      type: "list",
-      name: "juego",
-      message: "",
-      choices: ["Papel", "Piedra", "Tijeras"],
-    },
-  ])
-  .then((answers) => {
-    let randomNumber = Math.floor(Math.random() * 3);
-    let PossibleAnswers = ["Papel", "Piedra", "Tijeras"];
-    let machineResult = PossibleAnswers[randomNumber];
-
-      if (answers.juego === "Tijeras" && machineResult === "Papel") {
-
-        console.log(kleur.yellow(`${answers.name} ${kleur.red().bold(answers.juego)} =/= machine ${kleur.cyan(machineResult)}`));
-        console.log(kleur.green().bold().underline(`${answers.name}, you won`));
-        
-      } else if (answers.juego === "Piedra" && machineResult === "Tijeras") {
-
-        console.log(kleur.yellow(`${answers.name} ${kleur.red().bold(answers.juego)} =/= machine ${kleur.cyan(machineResult)}`));
-        console.log(kleur.green().bold().underline(`${answers.name}, you won`));
-
-      } else if (answers.juego === "Papel" && machineResult === "Piedra") {
-
-        console.log(kleur.yellow(`${answers.name} ${kleur.red().bold(answers.juego)} =/= machine ${kleur.cyan(machineResult)}`));
-        console.log(kleur.green().bold().underline(`${answers.name}, you won`));
+import { welcome } from "./commands/welcome.cjs";
+import game from "./commands/game.js";
+import { Command } from "commander";
+import {readGame, deleteGame} from './commands/check.cjs'
+import { createFile } from "./commands/Partidas.cjs";
 
 
-      }  else if (answers.juego === machineResult) {
+const program = new Command();
 
-        console.log(kleur.yellow(`${answers.name} ${kleur.red().bold(answers.juego)} =/= machine ${kleur.cyan(machineResult)}`));
-        console.log(kleur.gray().bold().underline("this is a tie"));
 
-      } else {
-        console.log(kleur.yellow(`${answers.name} ${kleur.red().bold(answers.juego)} =/= machine ${kleur.cyan(machineResult)}`));
-        console.log(kleur.red().bold().underline(`${answers.name}, you lost`));
-      }
+program.version("0.0.1").description("rock paper and scissors game");
 
-      createFile("partidas.txt",`
-          ===Partida Hecha a las ${date}===
-          ${answers.name}:${answers.juego}==//==Machine: ${machineResult}
-      `);
-  });
+async function initialize() {
+  welcome("Piedra Papel y Tijeras.JS");
+
+  setTimeout(() => {
+    game();
+  }, 2000);
+}
+
+program
+.command("game")
+.alias("g")
+.description("a simple game of rock paper scissors")
+.action(async function () {
+  await initialize();
+})
+
+program
+.command("save")
+.alias("s")
+.description("a register from the data of the game, with player name and results of the game")
+.action(async () => {
+  await readGame("./partidas.txt");
+});
+
+program
+.command("deleteGame")
+.alias("dg")
+.description("delete everything from the partidas.txt file")
+.action(async () => {
+  await deleteGame('partidas.txt');
+})
+
+program
+.command("createGame")
+.alias("cg")
+.description("create a file with the data from the game")
+.action(() => {
+  createFile('partidas.txt'," ");
+})
+
+program.parse(process.argv);

@@ -1,8 +1,8 @@
 {
-  "name": "piedra-papel-y-tijera_js",
+  "name": "npm-rps",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "rock paper scissors game on the command line",
+  "main": "./src/index.js",
   "type": "module",
   "scripts": {
     "dev": "nodemon ./src/index.mjs"
@@ -11,6 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "commander": "^9.5.0",
+    "figlet": "^1.5.2",
     "inquirer": "^9.1.4",
     "kleur": "^4.1.5"
   },
