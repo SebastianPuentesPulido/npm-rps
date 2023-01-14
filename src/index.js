@@ -39,7 +39,7 @@ program
 .alias("dg")
 .description("delete everything from the partidas.txt file")
 .action(async () => {
-  await deleteGame('partidas.txt');
+   deleteGame('partidas.txt');
 })
 
 program
@@ -51,3 +51,5 @@ program
 })
 
 program.parse(process.argv);
+
+export default initialize;
