@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { welcome } from "./commands/welcome.cjs";
 import game from "./commands/game.js";
 import { Command } from "commander";

@@ -3,7 +3,9 @@
   "version": "0.0.2",
   "description": "rock paper scissors game on the command line",
   "main": "./src/index.js",
-  "bin": "./src/index.js",
+  "bin": {
+    "rps":"./src/index.js"
+  },
   "type": "module",
   "scripts": {
     "dev": "nodemon ./src/index.mjs"
