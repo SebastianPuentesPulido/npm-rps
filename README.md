@@ -8,7 +8,7 @@ A simple example of how to use inquirerJS with File System, you can play with th
 > in the code I make use of both commonJS and ES6 modules, you can change the files and have only one type of module used, I used commonJS because it made it easy for me to import functions, it's just a taste.
 
 - [inquirerJS](https://www.npmjs.com/package/inquirer#installation)
-- Kleur](https://www.npmjs.com/package/inquirer#installation)
+- [Kleur](https://www.npmjs.com/package/inquirer#installation)
 - [nodemon](https://www.npmjs.com/package/nodemon)
 - [commander](https://www.npmjs.com/package/commander)
 - [figlet](https://www.npmjs.com/package/figlet)
