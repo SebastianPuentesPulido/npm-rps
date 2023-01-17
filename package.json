@@ -1,7 +1,9 @@
 {
   "name": "npm-rps",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "rock paper scissors game on the command line",
+  "author":"Johan Puentes <github.com/sebastianpuentespulido>",
+  "repository": "SebastianPuentesPulido/npm-rps",
   "main": "./src/index.js",
   "bin": {
     "rps":"./src/index.js"
@@ -10,8 +12,7 @@
   "scripts": {
     "dev": "nodemon ./src/index.mjs"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["cli","game","command-line","command","inquirer","commander","kleur","prompts","questions","nodejs","node"],
   "license": "ISC",
   "dependencies": {
     "commander": "^9.5.0",

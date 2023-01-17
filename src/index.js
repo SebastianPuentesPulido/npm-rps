@@ -13,7 +13,7 @@ const program = new Command();
 program.version("0.0.1").description("rock paper and scissors game");
 
 async function initialize() {
-  welcome("Piedra Papel y Tijeras.JS");
+  welcome("Rock Paper and Scissor.JS");
 
   setTimeout(() => {
     game();
