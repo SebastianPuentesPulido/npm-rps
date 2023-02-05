@@ -1,10 +1,11 @@
 #!/usr/bin/env node
-
+//@ts-check
+"use strict";
 import { welcome } from "./commands/welcome.cjs";
 import game from "./commands/game.js";
 import { Command } from "commander";
 import {readGame, deleteGame} from './commands/check.cjs'
-import { createFile } from "./commands/Partidas.cjs";
+import { createFile   } from "./commands/Partidas.cjs";
 
 
 const program = new Command();

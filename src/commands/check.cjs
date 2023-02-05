@@ -1,6 +1,10 @@
 const fs = require('fs/promises');
 const {createFile} = require('./Partidas.cjs');
 
+/**
+ * 
+ * @param {String} path the path of the file will be read
+ */
 async function readGame (path) {
     try {
         const data = await fs.readFile(path, {encoding: 'utf8'});
@@ -10,6 +14,11 @@ async function readGame (path) {
     }
 }
 
+
+/**
+ * 
+ * @param {String} path the path of the file will be deleted
+ */
 function deleteGame(path) {
     try {
         fs.unlink(path);

@@ -4,6 +4,10 @@ import { createFile } from "./Partidas.cjs";
 
 let date = new Date();
 
+
+/**
+ * @returns {void}
+ */
 function game() {
     inquirer
       .prompt([
@@ -20,8 +24,17 @@ function game() {
         },
       ])
       .then((answers) => {
+        /**
+         * @type {Number}
+         */
         let randomNumber = Math.floor(Math.random() * 3);
+        /**
+         * @type {Array<String>}
+         */
         let PossibleAnswers = ["Papel", "Piedra", "Tijeras"];
+        /**
+         * @type {String}
+         */
         let machineResult = PossibleAnswers[randomNumber];
   
         if (answers.juego === "Tijeras" && machineResult === "Papel") {
